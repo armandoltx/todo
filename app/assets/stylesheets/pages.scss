@@ -58,7 +58,7 @@ h1 {
 .home-header {
     height: 400px;
     background-color: $p-color;
-    background-image: url("/assets/home-header.png");
+    background-image: image-url("/assets/home-header.png");
     background-repeat: no-repeat;
     background-position: right;
     h1 {
