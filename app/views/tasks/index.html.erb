@@ -1,2 +1,17 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>Tasks</h1>
+<% @tasks.each do |task| %>
+<ul>
+  <li><%= task.title %></li>
+  <li><%= task.status %></li>
+  <li><%= task.description %></li>
+</ul>
+<% end %>
+
+<div class="control">
+  <ul>
+    <li><%= link_to 'Create', new_list_task_path %></li>
+
+    <li><%= link_to 'Delete', @task, :method => :delete, :data => { :confirm => 'You are about to delete a list'}  %></li>
+  </ul>
+
+</div>

@@ -10,7 +10,7 @@
   <nav>
     <%= link_to 'Home', root_path %>
       <% if @current_user.present? %>
-          <%= link_to "list", lists_path %>
+          <%= link_to "lists", lists_path %>
           <%= link_to "Users", users_path %>
         <%= link_to "Log Out #{ @current_user.username}", login_path, :method => :delete %>
       <% else %>
