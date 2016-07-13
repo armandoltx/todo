@@ -1,3 +1,69 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*========= COLORS =======*/
+$p-color: #50BCC6;
+$s-color: #273B47;
+$pink: #E2425A;
+$green: #009688;
+$black: #000000;
+$white: #FFFFFF;
+$grey: #727272;
+$light-grey: #B6B6B6;
+$blue-grey: #607D8B;
+/*========= FONT FAMILY =======*/
+$p-font: "Raleway", "Helvetica Neue",Arial,Verdana,sans-serif;
+/*========= FONT SIZE =======*/
+$a: 18px;
+$p20: 20px;
+/*================================================================================*/
+/*===========================   Styles ==========================================*/
+//=============== global ===============
+h1 {
+    font-family: $p-font;
+}
+//=============== header ===============
+.mainnav {
+    padding: 10px;
+    margin: 0;
+    border: none !important;
+    .mainnav {
+        a {
+            list-style-type: none;
+            color: $s-color !important;
+            font-size: $a;
+            &:hover {
+                color: $blue-grey !important;
+            }
+        }
+    }
+    form {
+        margin-top: 20px;
+        input {
+            border: none;
+            border-radius: 10px;
+            padding: 5px 8px;
+            &[type="submit"] {
+                background-color: $p-color;
+                color: $white;
+                &:hover {
+                    background-color: $white;
+                    color: $s-color;
+                }
+            }
+        }
+    }
+}
+//=============== home page ===============
+.home-header {
+    height: 400px;
+    background-color: $p-color;
+    background-image: url("/assets/home-header.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    h1 {
+        line-height: 1.5;
+        margin-top: 100px;
+        margin-left: 60px;
+    }
+}

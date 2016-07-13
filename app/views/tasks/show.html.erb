@@ -1,14 +1,26 @@
-<h1><%= @task.title %></h1>
-
-
-<ul>
-  <li>(status) <%= @task.status %></li>
-  <li>created at: <%= @task.created_at %></li>
-  <li>updated: <%= @task.updated_at %></li>
-  <li>description: <%= @task.description %></li>
-</ul>
-<div class="controls">
-  <%= link_to 'Create', new_list_task_path %>
-  <%= link_to 'Edit', edit_list_task_path %>
-  <%= link_to 'Delete', list_task_path, :method => :delete, :data => { :confirm => "Are you sure?" } %>
-</div>
+<div class="row">
+    <div class="col-xs-12 col-md-3 index">
+        <%= render :partial => 'index_list' %>
+        <%= render :partial => 'new_list' %>
+        <%= render :partial => 'edit_list' %>
+    </div>
+    <div class="col-xs-12 col-md-4 index">
+        <div class="list">
+          <%= render :partial => 'show_list' %>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-5 task">
+      <h1><%= @task.title %></h1>
+      <ul>
+        <li>(status) <%= @task.status %></li>
+        <li>created at: <%= @task.created_at %></li>
+        <li>updated: <%= @task.updated_at %></li>
+        <li>description: <%= @task.description %></li>
+      </ul>
+      <div class="controls">
+        <%= link_to 'Create', new_list_task_path %>
+        <%= link_to 'Edit', edit_list_task_path %>
+        <%= link_to 'Delete', list_task_path, :method => :delete, :data => { :confirm => "Are you sure?" } %>
+        <%= render :partial => 'form_task_edit' %>
+      </div>
+    </div>

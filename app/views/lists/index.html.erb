@@ -1,13 +1,13 @@
-<h1>Lists</h1>
-<% @lists.each do |list| %>
-<ul>
-  <li><%= link_to list.title, list_path(list) %></li>
-</ul>
-<% end %>
-
-<div class="control">
-  <ol>
-    <li><%= link_to 'Create', new_list_path %></li>
-  </ol>
-
+<div class="col-xs-12 col-sm-3 col-md-3 index">
+  <h1>Lists</h1>
+  index in list here
+  <% @lists.each do |list| %>
+  <ul>
+    <li><%= link_to list.title, list_path(list) %></li>
+  </ul>
+  <% end %>
+  <div class="control">
+      <p><%= link_to 'Create', new_list_path %></p>
+      <%= render :partial => 'form_list_new' %>
+  </div>
 </div>

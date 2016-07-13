@@ -1,0 +1,16 @@
+
+  <h1>Lists</h1>
+index in list RENDER
+<% @lists.each do |list| %>
+<ul>
+  <li><%= link_to list.title, list_path(list) %></li>
+</ul>
+<% end %>
+
+<div class="control">
+  <ol>
+    <li><%= link_to 'Create', new_list_path %></li>
+  </ol>
+<%= render :partial => 'form_list_new' %>
+<%= render :partial => 'form_list_edit' %>
+</div>

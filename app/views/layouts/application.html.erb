@@ -7,20 +7,62 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <%= link_to 'Home', root_path %>
-      <% if @current_user.present? %>
-          <%= link_to "lists", lists_path %>
-          <%= link_to "Users", users_path %>
-        <%= link_to "Log Out #{ @current_user.username}", login_path, :method => :delete %>
-      <% else %>
-      <%= link_to "Sign Up", new_user_path %>
-      <%= link_to "Login", login_path %>
+  <header id="mainnav" class="navbar navbar-default mainnav">
+      <div class="container">
+        <div class="row">
+        	<!-- logo -->
+          <div class="col-xs-12 col-sm-3 logo logo-image">
+            <img class="logo-img" src="/assets/todo.png" alt="">
+          </div>
+          <!--  end logo -->
+          <nav class="col-xs-12 col-sm-4 mainnav ">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'Home', root_path %></li>
+            <% if @current_user.present? %>
+                  <li><%= link_to "lists", lists_path %></li>
+                  <li><%= link_to "Log Out #{ @current_user.username}", login_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign Up", new_user_path %></li>
+            </ul>
+          </nav>
+          <!-- end nav -->
+          <div class="col-xs-12 col-sm-5 login">
+            <%= form_tag '/login' do %>
+              <%= text_field_tag :username,  nil, :autofocus =>true, placeholder: "username" %>
+              <%= password_field_tag :password, placeholder: "pass" %>
+              <%= submit_tag 'login' %>
+            <% end %>
+          </div>
+             <% end %>
+        </div>
+      </div>
+      <!-- end container -->
+  </header>
+<div class="maincontainer">
+  <%= yield %>
+</div>
+<footer class="main-footer">
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+</footer>
 
-      <% end %>
-  </nav>
-
-<%= yield %>
 
 </body>
 </html>

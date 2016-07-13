@@ -10,7 +10,7 @@ class ListsController < ApplicationController
     list = List.create list_params
     list.user_id = @current_user.id
     list.save
-    redirect_to lists_path
+    redirect_to list_path(list)
   end
 
   def edit
@@ -20,11 +20,13 @@ class ListsController < ApplicationController
   def update
     list = List.find params[:id]
     list.update list_params
-    redirect_to lists_path
+    redirect_to list_path(list)
   end
 
   def show
+    @lists = @current_user.lists
     @list = List.find(params[:id])
+    @task = Task.new
   end
 
   def destroy
