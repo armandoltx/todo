@@ -33,6 +33,7 @@ class ListsController < ApplicationController
     list = List.find(params[:id])
     list.destroy
     redirect_to lists_path
+    #redirect_to :back #when we change anything in the editing form redirect to the same page
   end
 
   private
