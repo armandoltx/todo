@@ -5,6 +5,7 @@
     <%= button_tag(type: "submit", class: "edit-btn", name: "commit", value: "conceal") do %>
       <span class="glyphicon glyphicon-repeat"></span>
     <% end %>
+    <%= link_to '<span class="glyphicon glyphicon-check" aria-hidden="true"></span>'.html_safe, list_task_path, :method => :delete, :data => { :confirm => "Are you sure?" } %>
     <%= f.text_field :title, placeholder: "title", :autofocus => true, :required => true, :class => 'form-control' %>
   </div>
   <% end %>

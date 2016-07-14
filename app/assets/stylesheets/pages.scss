@@ -11,6 +11,8 @@ $white: #FFFFFF;
 $grey: #727272;
 $light-grey: #B6B6B6;
 $blue-grey: #607D8B;
+$f-grey: #fafafa;
+$b-grey: #ebebeb;
 /*========= FONT FAMILY =======*/
 $p-font: "Raleway", "Helvetica Neue",Arial,Verdana,sans-serif;
 /*========= FONT SIZE =======*/
@@ -21,9 +23,9 @@ $p20: 20px;
 //=============== global ===============
 h1 {
     font-family: $p-font;
+    text-align: center;
 }
 ul {
-    list-style: none;
     a {
         font-size: 20px;
         color: $black;
@@ -81,6 +83,7 @@ footer {
     background-repeat: no-repeat;
     background-position: right;
     h1 {
+        text-align: left;
         line-height: 1.5;
         margin-top: 100px;
         margin-left: 60px;
@@ -203,13 +206,26 @@ footer {
 }
 //===============  Lists ====================
 .index {
-    background-color: $pink;
+    height: 1000px;
+    padding: 0 10px;
+    margin-top: 4em;
+    background: $f-grey;
+    border: 1px solid $b-grey;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
     h1 {
         text-align: center;
     }
     ul {
-        padding-left: 0;
+        padding-left: 40px;
     }
+}
+.show {
+    height: 1000px;
+    padding: 0 10px;
+    margin-top: 4em;
+    background: $f-grey;
+    border: 1px solid $b-grey;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
 }
 //===============  Lists new FORM ===============
 .index-form {
@@ -225,7 +241,9 @@ footer {
                 box-shadow: none;
             }
             &[type="submit"] {
-                margin-left: -20px;
+                margin-top: -2px;
+                margin-left: -3px;
+                float: left;
                 background-color: $p-color;
                 color: $white;
                 border: none;
@@ -255,7 +273,9 @@ footer {
             }
         }
         button.edit-btn {
-            margin-left: -20px;
+            float: left;
+            margin-top: -3px;
+            margin-left: -4px;
             background-color: $p-color;
             color: $white;
             border: none;
@@ -268,4 +288,184 @@ footer {
             }
         }
     }
+}
+.new-tasks {
+    border: 1px solid $p-color;
+    border-radius: 25px;
+    input {
+        &[type="text"] {
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            box-shadow: none;
+        }
+        &[type="submit"] {
+            margin-top: -2px;
+            margin-left: -3px;
+            float: left;
+            background-color: $p-color;
+            color: $white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            &:hover {
+                background-color: $white;
+                color: $s-color;
+                border: 1px solid $p-color;
+            }
+        }
+    }
+}
+//===========================================================
+//===============  Lists List Tasks ===============
+//================   Lists form=================
+.index-list-task {
+    height: 1000px;
+    padding: 0 10px;
+    margin: 4em 0;
+    background: $f-grey;
+    border: 1px solid $b-grey;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
+}
+.edit_list_show {
+    height: 1000px;
+    padding: 0 10px;
+    margin: 4em 0;
+    background: $f-grey;
+    border: 1px solid $b-grey;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
+    .edit {
+        border: 1px solid #50BCC6;
+        border-radius: 25px;
+        button {
+            margin-left: -3px;
+            background-color: $p-color;
+            color: $white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            &:hover {
+                background-color: $white;
+                color: $s-color;
+                border: 1px solid $p-color;
+            }
+        }
+        input {
+            &[type="text"] {
+                border: none;
+                text-align: center;
+                font-size: 14px;
+                box-shadow: none;
+            }
+        }
+        a {
+            background-color: #50BCC6;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            padding: 11px;
+            float: right;
+            margin-right: -2px;
+            &:hover {
+                background-color: $white;
+                color: $s-color;
+                border: 1px solid $p-color;
+            }
+        }
+    }
+    //================   Tasks form =================
+    .new-tasks {
+        border: 1px solid $p-color;
+        border-radius: 25px;
+        input {
+            &[type="text"] {
+                border: none;
+                text-align: center;
+                font-size: 16px;
+                box-shadow: none;
+            }
+            &[type="submit"] {
+                margin-left: -2px;
+                background-color: $p-color;
+                color: $white;
+                border: none;
+                border-radius: 50%;
+                padding: 10px 15px;
+                &:hover {
+                    background-color: $white;
+                    color: $s-color;
+                    border: 1px solid $p-color;
+                }
+            }
+        }
+    }
+    textarea {
+        border: 1px solid $p-color;
+    }
+    //================   Tasks  =================
+}
+//================   Task form =================
+.task {
+    margin-top: 100px;
+    height: 1000px;
+    padding: 0 10px;
+    margin: 4em auto;
+    background: $f-grey;
+    border: 1px solid $b-grey;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
+    .task-form-edit {
+        border: 1px solid $p-color;
+        border-radius: 25px;
+        button {
+            margin-left: -3px;
+            background-color: $p-color;
+            color: $white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            &:hover {
+                background-color: $white;
+                color: $s-color;
+                border: 1px solid $p-color;
+            }
+        }
+        input {
+            &[type="text"] {
+                border: none;
+                text-align: center;
+                font-size: 16px;
+                box-shadow: none;
+            }
+        }
+        &[type="submit"] {
+            margin-left: -2px;
+            background-color: $p-color;
+            color: $white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            &:hover {
+                background-color: $white;
+                color: $s-color;
+                border: 1px solid $p-color;
+            }
+        }
+        a {
+            background-color: #50BCC6;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            padding: 11px;
+            float: right;
+            margin-right: -2px;
+            &:hover {
+                background-color: $white;
+                color: $s-color;
+                border: 1px solid $p-color;
+            }
+        }
+    }
+}
+textarea#task_description {
+    border: 1px solid $p-color;
 }

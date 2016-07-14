@@ -1,10 +1,9 @@
-  <div class=" index">
+  <div class="index">
     <h1>Lists</h1>
     <div class="control">
       <%= render :partial => 'form_list_new' %>
     </div>
     <div class="index-list">
-        index in list RENDER
         <% @lists.each do |list| %>
         <ul>
           <li><%= link_to list.title, list_path(list) %></li>

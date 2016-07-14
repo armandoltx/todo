@@ -12,7 +12,7 @@ class TasksController < ApplicationController
       task = Task.create task_params
       list = List.find params[:list_id] # this is the url stored in a var
       list.tasks << task # apending the task in the task in that list
-      redirect_to list_path(list)
+      redirect_to :back #when we change anything in the editing form redirect to the same page
   end
 
   def edit
@@ -29,14 +29,14 @@ class TasksController < ApplicationController
 
   def show
     @lists = @current_user.lists
-    @task = Task.find params[:id]
+    @task = Task.find_by :id => params[:id]
     @list = List.find params[:list_id]
   end
 
   def destroy
     task = Task.find params[:id]
     task.destroy
-    redirect_to list_tasks_path
+    redirect_to :back
   end
 
   private

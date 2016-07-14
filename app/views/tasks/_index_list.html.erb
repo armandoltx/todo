@@ -1,9 +1,8 @@
-<div class="index">
+<div class="index-list-task">
     <h1>Lists</h1>
     <div class="control">
       <%= render :partial => 'form_list' %>
     </div>
-    index  when you open taskfsdfsadf
     <% @lists.each do |list| %>
     <ul>
       <li><%= link_to list.title, list_path(list) %></li>
