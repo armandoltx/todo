@@ -1,24 +1,38 @@
-<h1>Sign Up</h1>
-<% if @user.errors.any? %>
-  <ol>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-  </ol>
-<% end %>
 
+<div class="container sign-form form">
+  <div class="col-xs-4 col-md-offset-3">
+    <hgroup>
+      <h1>Sign Up</h1>
+  </hgroup>
+  <% if @user.errors.any? %>
+    <ol>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ol>
+  <% end %>
 <%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username, :autofocus => true, :required => true%>
-
-    <%= f.label :email %>
-    <%= f.text_field :email, :autofocus => true, :required => true %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password, :required => true  %>
-
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, :required => true  %>
-
-    <%= f.submit "Sign Up" %>
+    <div class="group">
+      <%= f.text_field :username, :autofocus => true, :required => true%>
+      <span class="highlight"></span><span class="bar"></span>
+      <%= f.label :username %>
+    </div>
+    <div class="group">
+      <%= f.text_field :email, :autofocus => true, :required => true %>
+      <span class="highlight"></span><span class="bar"></span>
+      <%= f.label :email %>
+    </div>
+    <div class="group">
+      <%= f.password_field :password, :required => true  %>
+      <span class="highlight"></span><span class="bar"></span>
+      <%= f.label :password %>
+    </div>
+    <div class="group">
+      <%= f.password_field :password_confirmation, :required => true  %>
+      <span class="highlight"></span><span class="bar"></span>
+      <%= f.label :password_confirmation %>
+    </div>
+    <%= f.submit "Sign Up", :class =>'submit' %>
 <% end %>
+  </div>
+</div>

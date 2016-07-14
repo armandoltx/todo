@@ -29,7 +29,7 @@
           <div class="col-xs-12 col-sm-5 login">
             <%= form_tag '/login' do %>
               <%= text_field_tag :username,  nil, :autofocus =>true, placeholder: "username" %>
-              <%= password_field_tag :password, placeholder: "pass" %>
+              <%= password_field_tag :password %>
               <%= submit_tag 'login' %>
             <% end %>
           </div>
