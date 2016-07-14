@@ -1,9 +1,8 @@
-<%= form_for List.new do |f| %>
-    <div class="form-group">
-      <%= f.text_field :title, placeholder: "title", :autofocus => true, :required => true, :class => 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.text_field :category, placeholder: "category", :required => true, :class => 'form-control' %>
-    </div>
-    <%= f.submit %>
-<% end %>
+<div class="index-form">
+  <%= form_for List.new do |f| %>
+      <div class="create form-group form-inline">
+        <%= f.submit "+" %>
+        <%= f.text_field :title, placeholder: "title", :autofocus => true, :required => true, :class => 'form-control' %>
+      </div>
+    <% end %>
+</div>

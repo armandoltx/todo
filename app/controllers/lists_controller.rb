@@ -20,7 +20,7 @@ class ListsController < ApplicationController
   def update
     list = List.find params[:id]
     list.update list_params
-    redirect_to list_path(list)
+    redirect_to :back #when we change anything in the editing form redirect to the same page
   end
 
   def show

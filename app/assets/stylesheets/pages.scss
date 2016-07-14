@@ -22,6 +22,17 @@ $p20: 20px;
 h1 {
     font-family: $p-font;
 }
+ul {
+    list-style: none;
+    a {
+        font-size: 20px;
+        color: $black;
+        &:hover {
+            text-decoration: none;
+            color: $p-color;
+        }
+    }
+}
 //=============== header ===============
 .mainnav {
     padding: 10px;
@@ -75,7 +86,7 @@ footer {
         margin-left: 60px;
     }
 }
-//=============== Sign up ===============
+//=============== Sign up FORM ===============
 .sign-form {
     hgroup {
         text-align: center;
@@ -189,5 +200,72 @@ footer {
     input:focus ~ .highlight {
         animation: inputHighlighter 0.3s ease;
     }
-    /* Animations */
+}
+//===============  Lists ====================
+.index {
+    background-color: $pink;
+    h1 {
+        text-align: center;
+    }
+    ul {
+        padding-left: 0;
+    }
+}
+//===============  Lists new FORM ===============
+.index-form {
+    text-align: center;
+    .create {
+        border: 1px solid $p-color;
+        border-radius: 25px;
+        input {
+            &[type="text"] {
+                border: none;
+                text-align: center;
+                font-size: 16px;
+                box-shadow: none;
+            }
+            &[type="submit"] {
+                margin-left: -20px;
+                background-color: $p-color;
+                color: $white;
+                border: none;
+                border-radius: 50%;
+                padding: 10px 15px;
+                &:hover {
+                    background-color: $white;
+                    color: $s-color;
+                    border: 1px solid $p-color;
+                }
+            }
+        }
+    }
+}
+//===============  Lists edit FORM ===============
+.edit-list-form {
+    text-align: center;
+    .edit {
+        border: 1px solid $p-color;
+        border-radius: 25px;
+        input {
+            &[type="text"] {
+                border: none;
+                text-align: center;
+                font-size: 16px;
+                box-shadow: none;
+            }
+        }
+        button.edit-btn {
+            margin-left: -20px;
+            background-color: $p-color;
+            color: $white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            &:hover {
+                background-color: $white;
+                color: $s-color;
+                border: 1px solid $p-color;
+            }
+        }
+    }
 }

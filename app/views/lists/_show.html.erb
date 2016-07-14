@@ -1,13 +1,16 @@
-<h1><%= @list.title %></h1>
-show in list
-<% @list.tasks.each do |task| %>
-<ul>
-  <li><%= link_to task.title, list_task_path(@list, task) %></li>
-</ul>
-<% end %>
-<div class="controls">
-  <%= link_to 'Create', new_list_task_path(@list) %>
-</div>
-<div class="form">
-  <%= render :partial => 'form_task_new' %>
+<div class="">
+  <%= render :partial => 'form_list_edit' %>
+  <h1><%= @list.title %></h1>
+  show in list hello
+  <% @list.tasks.each do |task| %>
+  <ul>
+    <li><%= link_to task.title, list_task_path(@list, task) %></li>
+  </ul>
+  <% end %>
+  <div class="controls">
+    <%= link_to 'Create', new_list_task_path(@list) %>
+  </div>
+  <div class="form">
+    <%= render :partial => 'form_task_new' %>
+  </div>
 </div>

@@ -1,9 +1,10 @@
-<%= form_for @list do |f| %>
-<div class="form-group">
-  <%= f.text_field :title, placeholder: "title", :autofocus => true, :required => true, :class => 'form-control' %>
+<div class="edit-list-form">
+  <%= form_for @list do |f| %>
+  <div class="edit form-group form-inline">
+    <%= button_tag(type: "submit", class: "edit-btn", name: "commit", value: "conceal") do %>
+      <span class="glyphicon glyphicon-repeat"></span>
+    <% end %>
+    <%= f.text_field :title, placeholder: "title", :autofocus => true, :required => true, :class => 'form-control' %>
+  </div>
+  <% end %>
 </div>
-<div class="form-group">
-  <%= f.text_field :category, placeholder: "category", :required => true, :class => 'form-control' %>
-</div>
-<%= f.submit %>
-<% end %>
