@@ -1,16 +1,21 @@
 class ListsController < ApplicationController
   def index
     @lists = @current_user.lists
+    @tasks = @current_user.tasks
+
   end
 
   def new
     @list = List.new
   end
+
   def create
     list = List.create list_params
     list.user_id = @current_user.id
     list.save
-    redirect_to list_path(list)
+    #redirect_to list_task_path(task.list, task)
+    redirect_to list_tasks_path(list)
+
   end
 
   def edit
@@ -20,7 +25,7 @@ class ListsController < ApplicationController
   def update
     list = List.find params[:id]
     list.update list_params
-    redirect_to :back #when we change anything in the editing form redirect to the same page
+     redirect_to :back #when we change anything in the editing form redirect to the same page
   end
 
   def show

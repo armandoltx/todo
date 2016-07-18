@@ -1,17 +1,10 @@
-<h1>Tasks</h1>
-<% @tasks.each do |task| %>
-<ul>
-  <li><%= task.title %></li>
-  <li><%= task.status %></li>
-  <li><%= task.description %></li>
-</ul>
-<% end %>
-
-<div class="control">
-  <ul>
-    <li><%= link_to 'Create', new_list_task_path %></li>
-
-    <li><%= link_to 'Delete', @task, :method => :delete, :data => { :confirm => 'You are about to delete a list'}  %></li>
-  </ul>
-
-</div>
+<h1><%= @current_user.username %> List</h1>
+<div class="main-container">
+    <div class="col-xs-12 col-sm-4 index_list_show">
+      <%= render :partial => 'index_list' %>
+    </div>
+    <div class="col-xs-12 col-sm-8 edit_list_show">
+    <%= render :partial => 'edit_list' %>
+      <%= render :partial => 'show_list' %>
+    </div>
+  </div>

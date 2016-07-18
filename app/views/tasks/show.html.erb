@@ -1,16 +1,10 @@
-<div class="">
-    <div class="col-xs-12 col-sm-3 index_list_show">
+<div class="main-container">
+    <div class="col-xs-12 col-sm-4 index_list_show">
       <%= render :partial => 'index_list' %>
     </div>
-    <div class="col-xs-12 col-sm-3 edit_list_show">
-      <h1>Tasks in</h1>
-      <%= render :partial => 'edit_list' %>
+    <div class="col-xs-12 col-sm-8 edit_list_show">
+    <%= render :partial => 'edit_list' %>
       <%= render :partial => 'show_list' %>
-    </div>
-    <% if @task %>
-    <div class="col-xs-12 col-md-6 task">
-      <h1>Task</h1>
-        <%= render :partial => 'form_task_edit' %>
-    </div>
 
-<% end %>
+    </div>
+  </div>

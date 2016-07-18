@@ -1,11 +1,10 @@
 <div class="index-list-task">
-    <h1>Lists</h1>
-    <div class="control">
-      <%= render :partial => 'form_list' %>
-    </div>
-    <% @lists.each do |list| %>
+    <%= render :partial => 'form_list' %>
     <ul>
-      <li><%= link_to list.title, list_path(list) %></li>
+        <% @lists.each do |list| %>
+
+          <li><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            <%= link_to list.title, list_tasks_path(list) %></li>
+        <% end %>
     </ul>
-    <% end %>
 </div>

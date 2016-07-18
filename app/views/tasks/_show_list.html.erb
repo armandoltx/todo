@@ -2,7 +2,10 @@
 <%= render :partial => 'form_task_new' %>
 </div>
 <% @list.tasks.each do |task| %>
-<ul>
-  <li><%= link_to task.title, list_task_path(@list, task) %></li>
+<ul class= task-list>
+  <li>
+      <%= link_to '<span class="glyphicon glyphicon-check" aria-hidden="true"></span>'.html_safe, list_task_path(@list, task), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      <%=task.title %>
+  </li>
 </ul>
 <% end %>

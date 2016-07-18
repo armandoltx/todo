@@ -1,8 +1,7 @@
-<div class="index-form form-list-intask">
-  <%= form_for @list do |f| %>
-      <div class="create form-group form-inline">
+<div class="index-form form-inline">
+  <%= form_for List.new do |f| %>
         <%= f.submit "+" %>
         <%= f.text_field :title, placeholder: "add list", :autofocus => true, :required => true, :class => 'form-control' %>
-      </div>
+
   <% end %>
 </div>

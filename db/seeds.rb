@@ -1,7 +1,7 @@
 User.destroy_all
-u1 = User.create(:username => "armando", :email => "armando@armandoltx.com", :password => "chicken")
-u2 = User.create(:username => "user1", :email => "user1@todo.com", :password => "chicken")
-u3 = User.create(:username => "user2", :email => "user2@todo.com", :password => "chicken")
+u1 = User.create(:username => "Armando", :email => "armando@armandoltx.com", :password => "chicken")
+u2 = User.create(:username => "Peter", :email => "peter@todo.com", :password => "chicken")
+u3 = User.create(:username => "Maria", :email => "maria@todo.com", :password => "chicken")
 
 List.destroy_all
 l1 = List.create(:title => 'shopping', :category => 'personal')
