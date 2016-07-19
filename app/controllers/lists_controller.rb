@@ -39,6 +39,13 @@ class ListsController < ApplicationController
     list.destroy
     redirect_to lists_path
     #redirect_to :back #when we change anything in the editing form redirect to the same page
+    # try to test it:
+
+    # if @current_user.lists.any?
+    #   redirect_to "lists", list_tasks_path(@current_user.lists.first)
+    # else
+    #   redirect_to "lists", lists_path
+    # end
   end
 
   private
